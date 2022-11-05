@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        tools:context=".Clients">
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="nom "
+              android:id="@+id/clientnom"/>
+
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="adress "
+              android:id="@+id/clientadr"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="tel"
+              android:id="@+id/clienttel"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="fax"
+              android:id="@+id/clientfax"/>
+
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="mail "
+              android:id="@+id/clientmail"/>
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="contact num "
+              android:id="@+id/clientcontact"/>
+    <EditText android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="mail "
+              android:id="@+id/clientcontacttel"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+
+    >
+        <Button android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:id="@+id/saveclient"
+        android:text="save"/>
+        <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:text="CANCEL"
+                android:layout_height="wrap_content"
+                android:tooltipText="cancel"
+                android:id="@+id/clientcancel" />
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
