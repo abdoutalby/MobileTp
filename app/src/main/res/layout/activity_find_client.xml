@@ -1,34 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".FindClient">
-
-    <TextView android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="Find Client "
-              android:textAlignment="center"
-              android:textSize="24sp"
-              android:layout_centerInParent="true"
-              android:id="@+id/tvFindClient"
-    />
+        android:padding="20dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="20dp"
+        tools:context=".Clients">
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:layout_below="@+id/tvFindClient"
-                    android:padding="40dp"
-                    android:orientation="vertical">
+                  android:orientation="vertical">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+            <EditText android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/findClientFindClient"
+                      android:hint="find by name "/>
+            <ImageButton android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/findClientbtnFindClient"
+                         android:src="@drawable/search"
+                         android:layout_alignParentRight="true"
+                         android:text="find"
+            />
+        </RelativeLayout>
+
 
 
         <EditText android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:hint="clientSearch"
-                  android:id="@+id/ETclientSearch"/>
+                  android:hint="nom "
+                  android:id="@+id/findclientnom"/>
 
+
+        <EditText android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="adress "
+                  android:id="@+id/findclientadr"/>
+
+        <EditText android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="tel"
+                  android:id="@+id/findclienttel"/>
+
+        <EditText android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="fax"
+                  android:id="@+id/findclientfax"/>
+
+        <EditText android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="mail "
+                  android:id="@+id/findclientmail"/>
+        <EditText android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="contact num "
+                  android:id="@+id/findclientcontact"/>
+        <EditText android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:hint="mail "
+                  android:id="@+id/findclientcontacttel"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+                      android:id="@+id/findNavigation"
+        >
+            <ImageButton android:layout_width="0dp"
+                         android:layout_weight="1"
+                         android:backgroundTint="@color/colorPrimaryDark"
+                         android:layout_height="30dp"
+                         android:id="@+id/findfirstClient"
+                         android:src="@drawable/first" />
+
+            <ImageButton android:layout_width="0dp"
+
+                         android:backgroundTint="@color/colorPrimaryDark"
+                         android:layout_weight="1"
+                         android:layout_height="30dp"
+                         android:id="@+id/findprevClient"
+                         android:src="@drawable/left" />
+
+            <ImageButton android:layout_width="0dp"
+                         android:layout_weight="1"
+                         android:backgroundTint="@color/colorPrimaryDark"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/findnextClient"
+                         android:src="@drawable/right" />
+
+            <ImageButton android:layout_width="0dp"
+                         android:layout_weight="1"
+
+                         android:backgroundTint="@color/colorPrimaryDark"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/findlastClient"
+                         android:src="@drawable/last" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="horizontal"
+
+        >
+            <ImageButton android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/findOK"
+                    android:src="@drawable/done"
+                    android:text="save"/>
+            <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:text="CANCEL"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cancel"
+                    android:tooltipText="cancel"
+                    android:id="@+id/findCa" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</RelativeLayout>
+</ScrollView>

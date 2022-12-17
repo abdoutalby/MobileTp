@@ -2,27 +2,42 @@ package com.example.tp1;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import utils.DBHelper;
+import utils.models.Client;
 
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class ContractAdapter extends RecyclerView.Adapter<ContractAdapter.ViewHolder> {
     Context context;
     ArrayList<Contract> contracts;
 
+    ArrayList<Client> clients = new ArrayList<>();
+
     IclickListner iclickListner;
 
-    public ContractAdapter(Context context, ArrayList<Contract> contracts , IclickListner iclickListner) {
+    public ContractAdapter(Context context, ArrayList<Contract> contracts , ArrayList<Client> clients, IclickListner iclickListner) {
         this.context = context;
         this.contracts = contracts;
         this.iclickListner = iclickListner;
+        this.clients  = clients;
     }
 
     @NonNull
@@ -39,10 +54,7 @@ public class ContractAdapter extends RecyclerView.Adapter<ContractAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull ContractAdapter.ViewHolder holder, int position) {
-        DBHelper dbHelper = new DBHelper(context.getApplicationContext());
-        Cursor c = dbHelper.findClientById(contracts.get(position).getIdClient());
-        c.moveToFirst();
-        holder.id.setText("client name  : "+ c.getString(c.getColumnIndexOrThrow("nom")));
+         holder.id.setText("client name  : "+ clients.get(0).getNom());
         holder.ref.setText("contract reference : "+String.valueOf(contracts.get(position).getReference()));
         holder.datedebut.setText("contract debut : "+contracts.get(position).getDatedebut());
         holder.datefin.setText("contract fin : "+contracts.get(position).getDatefin());
@@ -78,4 +90,9 @@ public class ContractAdapter extends RecyclerView.Adapter<ContractAdapter.ViewHo
     public interface IclickListner{
         void onSelectItem(int position);
     }
+
+
+
+
+
 }

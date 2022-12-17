@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import com.example.tp1.Contract;
+import utils.models.Client;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -120,6 +121,16 @@ public class DBHelper extends SQLiteOpenHelper {
             return  c.getInt(c.getColumnIndexOrThrow("id"));
         }
         return -1;
+    }
+    public Cursor getClientByName(String name ){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor c = DB.rawQuery("select * from clients where nom = ? ;",new String[]{name});
+        if (c.getCount()>0){
+            return  c;
+        }else {
+            return null;
+        }
+
     }
 
     public boolean deleteContract(int  id) {

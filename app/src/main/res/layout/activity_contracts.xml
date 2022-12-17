@@ -17,17 +17,30 @@
                   android:text="Add new contract "
         android:textAlignment="center"
         android:textSize="20sp"/>
-
-    <EditText android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:hint="client Name"
-              android:id="@+id/contractClient"
-    />
+              android:weightSum="4"
+              android:orientation="horizontal"
+        >
+        <EditText
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                  android:layout_height="wrap_content"
+                  android:hint="client Name"
+                  android:id="@+id/contractClient"
+        />
+    <ImageButton android:layout_width="0dp"
+                 android:layout_weight="1"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/search"
+                 android:id="@+id/contractFindClient" />
+
+</LinearLayout>
 
 
 
 
-    <EditText android:layout_width="match_parent"
+        <EditText android:layout_width="match_parent"
               android:inputType="date"
               android:layout_height="wrap_content"
               android:id="@+id/datedebut"
